@@ -1,9 +1,9 @@
 package echauffement;
 
 
-/* A l'aide de boucle, tableau, exception et fonction. Me faire un tableau contenant 5 noms de pays (Vous pouvez choisir vos propres pays), créer une méthode pour afficher les pays du tableau numéroté par ligne et autre une méthode pour choisir un pays selon 
+/* A l'aide de boucle, tableau, exception et fonction. Me faire un tableau contenant 5 noms de ville (Vous pouvez choisir vos propres villes), créer une méthode pour afficher les villes du tableau numéroté par ligne et autre une méthode pour choisir une ville selon 
 
-la position de sa cellule du tableau et puis affichera un message de bienvenue dans la langue du pays choisi.:
+la position de sa cellule du tableau et puis affichera un message de bienvenue dans la langue de la ville choisie.:
 
 Bonjour, quelle ville voulez-vous visiter ?
 
