@@ -59,23 +59,6 @@ Votre voyage est terminé :) !
 public class ListeVille {
 
 
-    public static String ValeurTableau(String[]tab, int i){
-        
-
-        if(i<tab.length){
-
-            return tab[i];
-
-        }else{
-
-            return "Cette ville n'est pas sur la liste";
-
-        }
-
-
-    }
-
-
     public static boolean decision(String response){
 
 
@@ -90,7 +73,7 @@ public class ListeVille {
         }else{
 
 
-            System.err.println("Veuillez renseigner une valeur O(Oui) ou N(Non)");
+            System.err.print("Veuillez renseigner une valeur O(Oui) ou N(Non)");
 
                     return false;
 
@@ -105,6 +88,7 @@ public class ListeVille {
 
 
     }
+
 
 
     public static String ListeTableau(String[]tab){
@@ -134,55 +118,120 @@ public class ListeVille {
 
         boolean stop = false;
         Scanner clavier = new Scanner(System.in);
-        String again="";
-        int choice;
-        boolean repeat=true;
+        int choice=0;
+        String response;
 
         String [] villes = {"Paris","Londres","Madrid","Lisbonne","Berlin"};
         String [] messages = {"Bienvenu à Paris","Welcome in London","Bienvenido a Madrid","Bem-vindo a Lisboa","Willkommen in Berlin"};
 
-        int i = 0;
+        System.out.println("Bonjour, quelle ville voulez-vous visiter ?:");
 
-        while(!stop){
+         while(!stop){
+
+            System.out.println(ListeTableau(villes));
+            choose(choice,messages,clavier);
+           System.out.print("Voulez-vous visiter une autre ville (O/N):");
+           clavier.nextLine();
+           response = clavier.nextLine();
+
+            stop = continueTravel(response,clavier);
+
+        }
+
+        System.out.print("Votre voyage est terminé :) !");
+
+                            clavier.close();
+
+    }
+
+    public static void choose(int choice,String[]tab,Scanner clavier){
+
+
+           boolean repeat=true;
+
+           int count=0;
         
-        if(i<1){
+           while(repeat){
 
-        System.out.println("Bonjour, quelle ville souhaitez-vous visiter ?");
+            try {
+           System.out.print("numéro de la ville :");
+           if(count>=1){
+           clavier.nextLine();
+           }
+             choice = clavier.nextInt();
+             repeat=false;
+             count++;
 
-        System.out.println(ListeTableau(villes));
+                
+            } catch (Exception e) {
+                
+             System.out.println("Veuillez entrer un nombre");
+             count++;
 
-        }else{
-
-            System.out.println("Voulez-vous visiter une autre ville ? (O/N)"); 
-
-            while(repeat){
+            }
 
 
-              again = clavier.nextLine().toUpperCase();
-              stop=decision(again);
-              if(again.equals("O")){repeat=false;}
-              else if(again.equals("N")){repeat=false;}
-              
+        }
+                     System.out.println(ValeurTableau(tab, choice));
+    }
+
+    
+    public static boolean continueTravel(String response,Scanner clavier) {
+
+        boolean decision=false;
+        boolean repeat=false;
+
+        while(!repeat){
+
+           if (response.equalsIgnoreCase("N")) {
+
+                decision=true;
+                repeat=true;
+
+            } else if (response.equalsIgnoreCase("O")) {
+
+                decision=false;
+                repeat=true;
+
+            }else{
+
+                System.out.print("Veuillez tapez soit O(Oui) ou N(Non):");
+                response = clavier.nextLine();
+                decision=false;
+                repeat=false;
 
             }
 
         }
-        System.out.println("numéro de la vile :");
-        choice = clavier.nextInt();
-        System.out.println(ValeurTableau(messages, choice));
-        i++;
-    
-      
-        }
 
-
-
-
-        clavier.close();
-
+            return decision;
         
     }
 
 
     
+
+    public static String ValeurTableau(String[]tab, int i){
+        
+        
+        if(i<tab.length){
+
+            return tab[i];
+
+        }else{
+
+            return "Cette ville n'est pas sur la liste";
+
+        }
+
+
+    }
+
+
+    
+
 }
+
+
+    
+
