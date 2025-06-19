@@ -1,7 +1,8 @@
 package Intro;
 
-public class Tableau {
+import methods.Functions; /* Toujours faire un import de vos fonctions si elles sont logées dans un autre package */
 
+public class Tableau {
 
     public static int premierValuerTableau(int[] tableau) {
         return tableau[0]; // Retourne la première valeur du tableau
@@ -11,12 +12,7 @@ public class Tableau {
         return tableau[tableau.length - 1]; // Retourne la dernière valeur du tableau
     }
 
-    public static void AfficherTouteValeurTableau(int[] tableau) {
 
-        for (int i = 0; i < tableau.length; i++) {
-            System.out.println("Valeur à l'index " + i + " : " + tableau[i]); // Affiche chaque valeur du tableau
-        }
-    }
 
 
 
@@ -26,6 +22,6 @@ public class Tableau {
 
         System.out.println("Affiche moi la première valeur du tableau : " + premierValuerTableau(tableau)); // Affiche la première valeur du tableau
         System.out.println("Affiche moi la dernière valeur du tableau : " + dernierValuerTableau(tableau)); // Affiche la dernière valeur du tableau
-        AfficherTouteValeurTableau(tableau);
+        Functions.AfficherTouteValeurTableau(tableau);
     }
 }
