@@ -73,7 +73,7 @@ public class ExoJalon {
 
                         if(productList.isEmpty()) {
 
-                            System.out.println("La liste des produits est vide. Aucun produit à supprimer, veuiller ajouter d'abord un produit (1).");
+                            System.out.println("La liste des produits est vide. Aucun produit à supprimer, veuiller d'abord ajouter un produit (1).");
 
                         }else{
                          // Supprimer un produit
@@ -85,7 +85,7 @@ public class ExoJalon {
                         // Rechercher un produit par ID
                         if(productList.isEmpty()) {
 
-                            System.out.println("La liste des produits est vide. Aucun produit à rechercher, veuiller ajouter d'abord un produit (1).");
+                            System.out.println("La liste des produits est vide. Aucun produit à rechercher, veuiller d'abord ajouter un produit (1).");
                         }else{
                             MenuList.searchProductById(productList, scanner);
                         }

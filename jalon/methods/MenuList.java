@@ -26,6 +26,9 @@ public class MenuList {
        
         // Code pour ajouter un produit dans la liste
 
+
+                addProduct:while (true) {
+
         name = addProductName(list, name, clavier);
 
         String typeName = addProductType(list, type, clavier);
@@ -47,10 +50,22 @@ public class MenuList {
             discount = "(Réduction de 10% appliquée)";
         }
 
-        String productDetails = "[ ID: " + (list.size() + 1) + ", Nom: " + name + ", Type: " + typeName + ", Date: " + date + ", Prix: " + price + " euros" + discount + ", En solde: " + onSaleString + " ]";
+        String productDetails = "[ ID: " + (list.size() + 1) + ", Nom: " + name + ", Type: " + typeName + ", Date: " + date + ", Prix: " + String.format("%.2f", price) + " euros" + discount + ", En solde: " + onSaleString + " ]";
 
         list.add(productDetails);
         System.out.println("Produit ajouté : " + productDetails);
+
+                    if(again(clavier)==true){
+
+            continue addProduct;
+
+            }else{
+            break addProduct;
+
+            }
+
+        }
+
 
 
 
@@ -79,10 +94,23 @@ public class MenuList {
         } catch (Exception e) {
 
             Exceptioner.TxtException(e,list.size());
+            clavier.nextLine();
             continue addProductPrice; // Recommencer la saisie du prix
 
         }
     }
+        }
+
+        public static boolean again(Scanner clavier){
+
+            boolean respond;
+
+        System.out.println("Voulez-vous recommencer ? :");
+        respond = clavier.nextBoolean();
+        clavier.nextLine();
+
+        return respond;
+
         }
 
         public static boolean addProductSale(ArrayList<String> list, boolean isOnSale, Scanner clavier) {
@@ -181,6 +209,16 @@ public class MenuList {
             
             String removedProduct = list.remove(productId - 1);
             System.out.println("Produit supprimé : " + removedProduct);
+
+            if(again(clavier)==true){
+
+            continue removeProduct;
+
+            }else{
+            break removeProduct;
+
+            }
+
             
 
         } catch (Exception e) {
@@ -209,7 +247,16 @@ public class MenuList {
 
             String productDetails = list.get(productId - 1);
             System.out.println("Détails du produit : " + productDetails);
-            break searchProductById; // Sort de la méthode si le produit est trouvé 
+
+            if(again(clavier)==true){
+
+            continue searchProductById;
+
+            }else{
+
+            break searchProductById;
+
+            }
 
         } catch (Exception e) {
 
