@@ -29,7 +29,7 @@ Prix : Le prix de base du produit
 On veut gérer cette liste en ajoutant ou supprimant nos produits. On peut aussi rechercher un produit en fonction de son ID 
  */
 
-public class ExoJalon {
+public class ExoJalonBlanc {
 
 
     static Scanner scanner = new Scanner(System.in, "Cp852");

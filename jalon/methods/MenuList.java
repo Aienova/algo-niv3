@@ -13,7 +13,14 @@ public class MenuList {
 
     public static final String EURO = "\u20AC";
 
+
+   
+
     public static void displayMenu() {
+        
+
+
+
         System.out.println("(1). Ajouter un produit");
         System.out.println("(2). Supprimer un produit");
         System.out.println("(3). Rechercher un produit par ID");
@@ -285,6 +292,8 @@ public class MenuList {
     public static boolean isOlderThanFourMonths(String date) {
         // Implémentez la logique pour vérifier si la date est plus ancienne que 4 mois
         // Par exemple, vous pouvez utiliser la classe LocalDate pour comparer les dates
+
+        // YYYY-mm-dd
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate storageDate = LocalDate.parse(date, formatter); /* On récupère la date String on l'a converti au format LocalDate */
