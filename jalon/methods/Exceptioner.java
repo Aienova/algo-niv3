@@ -1,7 +1,5 @@
 package jalon.methods;
 
-import java.util.ArrayList;
-
 public class Exceptioner {
 
     public static void TxtException(Exception e, int total) {
